@@ -32,5 +32,4 @@ login_button.pack(padx=5)
 
 
 # Bind the Enter key event to the perform_login function
-root.mainloop()
-
+root.bind("<Return>", lambda event=None: perform_login())
