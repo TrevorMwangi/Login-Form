@@ -2,6 +2,9 @@ import tkinter as tk
 from tkinter import messagebox
 from tkinter import ttk
 
+def close_all_windows():
+    root.destroy()
+
 def perform_login():
     username = username_entry.get()
     password = password_entry.get()
@@ -10,6 +13,11 @@ def perform_login():
         messagebox.showinfo("Login Successful", "Welcome, {}!".format(username))
     else:
         messagebox.showerror("Login Failed!", "Invalid username or password")
+
+     # After showing the login result, ask for confirmation to close all windows
+    confirmation = messagebox.askokcancel("Close All Windows", "Do you want to close all windows?")
+    if confirmation:
+        close_all_windows()    
 
 root = tk.Tk()
 root.title("Login Form")
