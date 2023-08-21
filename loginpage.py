@@ -34,6 +34,12 @@ def open_password_generator():
     login_frame.pack_forget()  # Hide the login frame
     password_generator_frame.pack()  # Show the password generator frame
 
+def toggle_password_visibility():
+    if show_password_var.get():
+        password_entry.config(show="")
+    else:
+        password_entry.config(show="*")
+
 
 #Login Function
 def perform_login():
@@ -76,11 +82,16 @@ password_label.grid(row=1, column=0, padx=10, pady=5, sticky="w")
 password_entry = tk.Entry(login_frame, show="*", font=("Arial", 14))
 password_entry.grid(row=1, column=1, padx=10, pady=5,)
 
+show_password_var = tk.BooleanVar()
+show_password_check = ttk.Checkbutton(login_frame, text="Show Password", variable=show_password_var, command=toggle_password_visibility)
+show_password_check.grid(column=1, row=2, columnspan=2, sticky="W")
+
+
 login_button = ttk.Button(login_frame, text="Login", command=perform_login, style="Custom.TButton")
-login_button.grid(row=2, columnspan=2, padx=10, pady=20)
+login_button.grid(row=6, columnspan=4, padx=20, pady=20)
 
 password_generator_button = ttk.Button(login_frame, text="Forgot Password?", command=open_password_generator)
-password_generator_button.grid(row=3, columnspan=2, padx=10, pady=10)
+password_generator_button.grid(row=4, columnspan=2, padx=10, pady=10)
 
 current_password = "password"  # The existing password
 
