@@ -88,7 +88,7 @@ show_password_check.grid(column=1, row=2, columnspan=2, sticky="W")
 
 
 login_button = ttk.Button(login_frame, text="Login", command=perform_login, style="Custom.TButton")
-login_button.grid(row=6, columnspan=4, padx=20, pady=20)
+login_button.grid(row=6, columnspan=4, padx=10, pady=20)
 
 password_generator_button = ttk.Button(login_frame, text="Forgot Password?", command=open_password_generator)
 password_generator_button.grid(row=4, columnspan=2, padx=10, pady=10)
