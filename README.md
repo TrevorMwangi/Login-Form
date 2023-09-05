@@ -1,3 +1,3 @@
-This is the login form of project
-We also have a password generator linked to it
+Tkinter desktop app
+Basic login form with password generator
 
